@@ -1,8 +1,11 @@
 #include"Calculator.h"
 #include"Matrix.h"
+#include"HugeInt.h"
+#include<string>
 
 void printRequest();	//输出需求选择
 void matrixCompute();	//封装矩阵计算的函数
+void hugeIntCompute();	//封装大数运算的函数
 
 
 void Calculator::compute()
@@ -16,6 +19,11 @@ void Calculator::compute()
 		case 1:
 			matrixCompute();
 			break;
+
+		case 2:
+			hugeIntCompute();
+			break;
+
 		default:
 			break;
 		}
@@ -111,6 +119,80 @@ void matrixCompute()
 		C = A * B;
 		cout << "The Answer is: " << endl;
 		C.print();
+	}
+	break;
+
+	default:
+		break;
+	}
+}
+
+void hugeIntCompute()
+{
+	cout << "******************************************************" << endl;
+	cout << "****** Please choose which computation you want ******" << endl;
+	cout << "***** 1. HugeNumberAdd    2. HugeNumberSubstract *****" << endl;
+	cout << "*****           3. HugeNumberProduct             *****" << endl;
+	cout << "******************************************************" << endl;
+	//detect what to do
+	int manipulate;
+	cin >> manipulate;
+	switch (manipulate)
+	{
+	case 1:		//1. HugeNumberAdd
+	{
+		string val1, val2;
+		cout << "请输入一个数据： ";
+		cin >> val1;
+		cout << "请输入另一个数据： ";
+		cin >> val2;
+
+		HugeInt num1 = HugeInt(val1);
+		HugeInt num2 = HugeInt(val2);
+
+		HugeInt result = HugeInt();
+		result = num1 + num2;
+
+		cout << "The answer is: ";
+		cout << result << endl;
+	}
+	break;
+
+	case 2:		//2. HugeNumberSubstract
+	{
+		string val1, val2;
+		cout << "请输入一个数据： ";
+		cin >> val1;
+		cout << "请输入另一个数据： ";
+		cin >> val2;
+
+		HugeInt num1 = HugeInt(val1);
+		HugeInt num2 = HugeInt(val2);
+
+		HugeInt result = HugeInt();
+		result = num1 - num2;
+
+		cout << "The answer is: ";
+		cout << result << endl;
+	}
+	break;
+
+	case 3:		// 3. HugeNumberProduct 
+	{
+		string val1, val2;
+		cout << "请输入一个数据： ";
+		cin >> val1;
+		cout << "请输入另一个数据： ";
+		cin >> val2;
+
+		HugeInt num1 = HugeInt(val1);
+		HugeInt num2 = HugeInt(val2);
+
+		HugeInt result = HugeInt();
+		result = num1 * num2;
+
+		cout << "The answer is: ";
+		cout << result << endl;
 	}
 	break;
 

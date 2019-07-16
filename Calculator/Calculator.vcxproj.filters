@@ -21,6 +21,9 @@
     <ClInclude Include="Calculator.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="HugeInt.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Matrix.cpp">
@@ -33,6 +36,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Compute.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="HugeInt.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
