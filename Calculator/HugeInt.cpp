@@ -1,5 +1,6 @@
 #include"HugeInt.h"
-
+#include<cmath>
+#include<algorithm>
 
 //overloading output operator
 ostream &operator<< (ostream &output, const HugeInt &num)
@@ -100,22 +101,36 @@ HugeInt HugeInt::operator-(const HugeInt &op2) const
 }
 
 HugeInt HugeInt::operator*(const HugeInt &op2) const
+{// the method to calculate product is encapsulated in the productHelper
+	return productHelper(*this, op2);
+}
+
+HugeInt HugeInt::productHelper(const HugeInt& op1, const HugeInt& op2) const
 {
 	HugeInt temp;
-	int carry = 0;
-
-	for (int i = digits - 1; i >= 0; i--)
-	{
-		temp.integer[i] = integer[i] * op2.integer[i] + carry;
-		//detect the carry
-		if (temp.integer[i] > 9)
-		{
-			carry = temp.integer[i] / 10;
-			temp.integer[i] %= 10;
-		}
-		else
-			carry = 0;
-
-	}
+	int op1Length = getLength();
+	int op2Length = op2.getLength();
+	int totalLength = op1Length + op2Length;
+	if (totalLength > 30) cerr << "The product is out of range." << endl;
+	//用分治法来进行计算，提高程序的运行效率
+	int halfN = max(op1Length, op2Length) / 2;
+	//something
 	return temp;
+}
+
+int HugeInt::getLength( ) const
+{
+	int i;
+	int length = 0;
+	for(i = 0; (integer[i] == 0) && (i <= HugeInt::digits - 1); i++)
+	{ }	//skip leading zeros
+	if (i == HugeInt::digits)
+	{
+		return length;
+	}
+	for (i = 0; i <= HugeInt::digits - 1; i++)
+	{//detect the length
+		length++;
+	}
+	return length;
 }

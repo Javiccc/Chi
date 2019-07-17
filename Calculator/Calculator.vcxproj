@@ -116,11 +116,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Calculator.h" />
+    <ClInclude Include="Complex.h" />
     <ClInclude Include="HugeInt.h" />
     <ClInclude Include="Matrix.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Calculator.cpp" />
+    <ClCompile Include="Complex.cpp" />
     <ClCompile Include="Compute.cpp" />
     <ClCompile Include="HugeInt.cpp" />
     <ClCompile Include="main.cpp" />

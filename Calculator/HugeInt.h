@@ -16,9 +16,10 @@ public:
 	HugeInt operator+(const HugeInt &) const;
 	HugeInt operator-(const HugeInt &) const;
 	HugeInt operator*(const HugeInt &) const;
-
-
+	
+	int getLength( ) const;	//to calculate the length of the number
 
 private:
 	short integer[digits];
+	HugeInt productHelper(const HugeInt& , const HugeInt& ) const;	//help to calculate the product
 };
