@@ -9,6 +9,7 @@ void printRequest();	//输出需求选择
 void matrixCompute();	//封装矩阵计算的函数
 void hugeIntCompute();	//封装大数运算的函数
 void complexCompute();	//封装复数运算的函数	
+void pictureDraw();		//封装图像绘制的函数
 
 void Calculator::compute()
 {//用来封装计算的函数
@@ -30,6 +31,10 @@ void Calculator::compute()
 			complexCompute();
 			break;
 
+		case 4:
+			pictureDraw();
+			break;
+
 		default:
 			break;
 		}
@@ -45,7 +50,7 @@ void printRequest()
 	cout << "****************************************************" << endl;
 	cout << "***** Please choose which computation you want *****" << endl;
 	cout << "***** 1. MatrixCompute       2. HugeIntCompute *****" << endl;
-	cout << "***** 3. ComplexCompute                        *****" << endl;
+	cout << "***** 3. ComplexCompute      4. PictureDraw    *****" << endl;
 	cout << "****************************************************" << endl;
 }
 
@@ -326,4 +331,61 @@ void complexCompute()
 		break;
 	}
 
+}
+
+void pictureDraw()
+{
+	cout << "******************************************************" << endl;
+	cout << "**** Please choose which picture you want to draw ****" << endl;
+	cout << "***** 1.指数函数:y=a^x（a>0且a!=1）              *****" << endl;
+	cout << "***** 2.幂函数:y=x^(m/n*(-1)^k),(y=x^a)          *****" << endl;
+	cout << "***** 3.对数函数:y=loga (x)                      *****" << endl;
+	cout << "***** 4.三角函数                                 *****" << endl;
+	cout << "***** 5.反三角函数                               *****" << endl;
+	cout << "***** 6.常数函数:y=c                             *****" << endl;
+	cout << "******************************************************" << endl;
+
+	int choice;
+	cin >> choice;
+	switch (choice)
+	{
+	case 1:
+	{
+
+	}
+	break;
+
+	case 2:
+	{
+
+	}
+	break;
+
+	case 3:
+	{
+
+	}
+	break;
+
+	case 4:
+	{
+
+	}
+	break;
+
+	case 5:
+	{
+
+	}
+	break;
+
+	case 6:
+	{
+
+	}
+	break;
+
+	default:
+		break;
+	}
 }
