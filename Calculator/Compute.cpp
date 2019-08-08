@@ -3,13 +3,17 @@
 #include"HugeInt.h"
 #include<string>
 #include"Complex.h"
-
+#include<fstream>
+#include<iomanip>
+#include<Windows.h>
 
 void printRequest();	//输出需求选择
 void matrixCompute();	//封装矩阵计算的函数
 void hugeIntCompute();	//封装大数运算的函数
 void complexCompute();	//封装复数运算的函数	
 void pictureDraw();		//封装图像绘制的函数
+void gotoxy(int x, int y);		//绘制函数图像所需要的goto函数
+
 
 void Calculator::compute()
 {//用来封装计算的函数
@@ -336,28 +340,142 @@ void complexCompute()
 void pictureDraw()
 {
 	cout << "******************************************************" << endl;
-	cout << "**** Please choose which picture you want to draw ****" << endl;
-	cout << "***** 1.指数函数:y=a^x（a>0且a!=1）              *****" << endl;
-	cout << "***** 2.幂函数:y=x^(m/n*(-1)^k),(y=x^a)          *****" << endl;
-	cout << "***** 3.对数函数:y=loga (x)                      *****" << endl;
-	cout << "***** 4.三角函数                                 *****" << endl;
-	cout << "***** 5.反三角函数                               *****" << endl;
-	cout << "***** 6.常数函数:y=c                             *****" << endl;
+	cout << "*****           你想查看哪种三角函数：           *****" << endl;
+	cout << "*****	           1.余弦    2.正弦               *****" << endl;
+	//cout << "**** Please choose which picture you want to draw ****" << endl;
+	//cout << "***** 1.指数函数                                 *****" << endl;
+	//cout << "***** 2.幂函数                                   *****" << endl;
+	//cout << "***** 3.对数函数                                 *****" << endl;
+	//cout << "***** 4.三角函数                                 *****" << endl;
+	//cout << "***** 5.反三角函数                               *****" << endl;
 	cout << "******************************************************" << endl;
 
 	int choice;
-	cin >> choice;
+	cin >> choice;		//choose which picture you will draw
+	//int knum = 0;
+	//float x, xlimit, y, ylimit;	//量程和分度值
+	//float outcome;	//单次计算结果
+	//string fileName;	//输出文件的名称
+	//char character;
+
 	switch (choice)
 	{
 	case 1:
 	{
+		/*
+		//y=a^x（a>0且a!=1）
+		float a;
+		cout << "请输入底数a:";
+		cin >> a;
+		while (a <= 0 || a == 1)
+		{
+			cout << "a值不在合理范围内，请重新输入: ";
+			cin >> a;
+		}
+		if (a > 1) fileName = "指数函数（底数 > 1）.txt";
+		else fileName = "指数函数（0 < 底数 < 1）.txt";
+		ifstream ifs(fileName);
+		ifs >> noskipws;
+		system("cls");
+		while (!ifs.eof())
+		{
+			//用txt文件来画一个坐标轴
+			ifs >> character;
+			if (character == 'k')
+			{
+				x = 10.25 - knum * 0.25;
+				knum++;
+				if (x == 0)
+				{
+					x -= 0.25;
+					knum++;
+				}
+				cout << setw(5) << x;
+			}
+			else if (character == 'c')
+			{
+				xlimit = log(10.25) / log(a);
+				xlimit = (int)(xlimit * 100 + 0.5) / 100.00;
+				cout << xlimit;
+			}
+			else cout << character;
+			ifs.close();	//关闭文件
+
+
+			if (a > 1)
+			{
+				for (int i = -11; i <= 100; i++)
+				{
+					y = pow(a, xlimit / 100 * i);
+					if (y > 10.25)
+					{
+						outcome = 0;
+					}
+					else
+					{
+						outcome = (int)((10.25 - y) / 0.25 + 0.5);
+					}
+					gotoxy(i + 11, outcome);
+					cout << "*";
+				}
+			}
+			else if (a < 1 && a>0)
+			{
+				for (int i = 110; i >= -7; i--)
+				{
+					y = pow(a, xlimit / 110 * i);
+					if (y > 10.25)
+						outcome = 0;
+					else outcome = (int)((10.25 - y) / 0.25 + 0.5);
+					gotoxy(110 - i + 1, outcome);
+					cout << "*";
+				}
+			}
+			system("pause");
+		}
+		*/
+		{//余弦
+			double y;
+			int x, space;
+			for (y = 1; y >= -1; y -= 0.1)
+			{
+				space = acos(y) * 10;
+				for (x = 0; x < space; x++)
+				{
+					cout << " ";
+				}
+				cout << "*";
+				for (; x < 62 - space; x++)
+				{
+					cout << " ";
+				}
+				cout << "*" << endl;
+			}
+		}
 
 	}
 	break;
 
 	case 2:
 	{
-
+		{//正弦
+			double y;
+			int x, space;
+			for (y = 1; y >= -1; y -= 0.1)
+			{
+				space = asin(y) * 10;
+				for (x = -32; x < space; x++)
+				{
+					cout << " ";
+				}
+				cout << "*";
+				for (; x < 32 - space; x++)
+				{
+					cout << " ";
+				}
+				cout << "*" << endl;
+			}
+		}
 	}
 	break;
 
@@ -369,23 +487,93 @@ void pictureDraw()
 
 	case 4:
 	{
+		//cout << "你想查看哪种三角函数：" << endl;
+		//cout << "1.余弦    2.正弦" << endl;
+		int choose;
+		cin >> choose;
+		switch (choose)
+		{
+		case 1:
+		{//余弦
+			double y;
+			int x, space;
+			for (y = 1; y >= -1; y -= 0.1)
+			{
+				space = acos(y) * 10;
+				for (x = 0; x < space; x++)
+				{
+					cout << " ";
+				}
+				cout << "*";
+				for (; x < 62 - space; x++)
+				{
+					cout << " ";
+				}
+				cout << "*" << endl;
+			}
+		}
+		break;
 
+		case 2:
+		{//正弦
+			double y;
+			int x, space;
+			for (y = 1; y >= -1; y -= 0.1)
+			{
+				space = asin(y) * 10;
+				for (x = -32; x < space; x++)
+				{
+					cout << " ";
+				}
+				cout << "*";
+				for (; x < 32 - space; x++)
+				{
+					cout << " ";
+				}
+				cout << "*" << endl;
+			}
+		}
+		break;
+
+		}
 	}
 	break;
 
 	case 5:
 	{
-
-	}
-	break;
-
-	case 6:
-	{
-
-	}
+		cout << "你想查看哪种三角函数：" << endl;
+		cout << "1.反余弦    2.反正弦" << endl;
+		int choose;
+		cin >> choose;
+		switch (choose)
+		{
+		case 1:
+		{//反余弦
+			double y;
+			int x, space;
+			for (y = 6.2; y >= 0; y -= 0.1)
+			{
+				space = cos(y) * 10;
+				for (x = -10; x < space; x++)
+				{
+					cout << " ";
+				}
+				cout << "*";
+			}
+		}
+		break;
+		}
+	}	
 	break;
 
 	default:
 		break;
 	}
+}
+
+void gotoxy(int x, int y)
+{
+	HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
+	COORD c = { x, y };
+	SetConsoleCursorPosition(hOut, c);
 }
