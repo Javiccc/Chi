@@ -15,6 +15,8 @@ void complexCompute();	//封装复数运算的函数
 void pictureDraw();		//封装图像绘制的函数
 //void gotoxy(int x, int y);		//绘制函数图像所需要的goto函数
 void polynomialCompute();		//封装多项式计算的函数
+void simpleCompute();		//封装基本函数运算的函数
+void simpleFunction();		//封装初等函数运算的函数
 
 
 void Calculator::compute()
@@ -45,6 +47,14 @@ void Calculator::compute()
 			polynomialCompute();
 			break;
 
+		case 6:
+			simpleCompute();
+			break;
+
+		case 7:
+			simpleFunction();
+			break;
+
 		default:
 			break;
 		}
@@ -61,7 +71,8 @@ void printRequest()
 	cout << "***** Please choose which computation you want *****" << endl;
 	cout << "***** 1. MatrixCompute       2. HugeIntCompute *****" << endl;
 	cout << "***** 3. ComplexCompute      4. PictureDraw    *****" << endl;
-	cout << "*****           5. PolynomialCompute           *****" << endl;
+	cout << "***** 5. PolynomialCompute   6. SimpleCompute  *****" << endl;
+	cout << "*****              7. SimpleFunction           *****" << endl;
 	cout << "****************************************************" << endl;
 }
 
@@ -608,4 +619,169 @@ void polynomialCompute()
 	cout << "多项式的计算结果为：";
 	polynomial.setX(x);
 	cout << polynomial.computeValue();
+}
+
+void simpleCompute()
+{
+	cout << "******************************************************" << endl;
+	cout << "****** Please choose which computation you want ******" << endl;
+	cout << "***** 1. 加法运算              2. 减法运算       *****" << endl;
+	cout << "***** 3. 乘法运算              4. 除法运算       *****" << endl;
+	cout << "******************************************************" << endl;
+	int manipulate;
+	cin >> manipulate;
+	switch (manipulate)
+	{
+	case 1:
+	{
+		double val1, val2;
+		cout << "请输入第一个数据：";
+		cin >> val1;
+		cout << "请输入第二个数据：";
+		cin >> val2;
+		double result;
+		result = val1 + val2;
+		cout << "计算结果是：" << result << endl;
+	}
+	break;
+
+	case 2:
+	{
+		double val1, val2;
+		cout << "请输入第一个数据：";
+		cin >> val1;
+		cout << "请输入第二个数据：";
+		cin >> val2;
+		double result;
+		result = val1 - val2;
+		cout << "计算结果是：" << result << endl;
+	}
+	break;
+
+	case 3:
+	{
+		double val1, val2;
+		cout << "请输入第一个数据：";
+		cin >> val1;
+		cout << "请输入第二个数据：";
+		cin >> val2;
+		double result;
+		result = val1 * val2;
+		cout << "计算结果是：" << result << endl;
+	}
+	break;
+
+	case 4:
+	{
+		double val1, val2;
+		cout << "请输入第一个数据：";
+		cin >> val1;
+		cout << "请输入第二个数据：";
+		cin >> val2;
+		double result;
+		result = val1 / val2;
+		cout << "计算结果是：" << result << endl;
+	}
+	break;
+
+	default:
+		break;
+	}
+
+}
+
+
+void simpleFunction()
+{
+	cout << "******************************************************" << endl;
+	cout << "****** Please choose which computation you want ******" << endl;
+	cout << "***** 1. 指数函数 x^y      2. 对数函数log(x) y   *****" << endl;
+	cout << "*****                3. 三角函数                 *****" << endl;
+	cout << "******************************************************" << endl;
+	int manipulate;
+	cin >> manipulate;
+	switch (manipulate)
+	{
+	case 1:
+	{//指数函数 x^y
+		double x;
+		double y;
+		cout << "请输入指数函数的底数x：";
+		cin >> x;
+		cout << "请输入指数y：";
+		cin >> y;
+
+		double result;
+		result = pow(x, y);
+		cout << "计算结果是：" << result << endl;
+	}
+
+	case 2:
+	{//2. 对数函数log(x) y
+		double x;
+		double y;
+		cout << "请输入对数函数的底数x：";
+		cin >> x;
+		cout << "请输入y：";
+		cin >> y;
+
+		double result;
+		result = log(y) / log(x);
+		cout << "计算结果是：" << result << endl;
+	}
+
+	case 3:
+	{//3. 三角函数  
+
+	}
+
+	case 4:
+	{
+		cout << "******************************************************" << endl;
+		cout << "****** Please choose which computation you want ******" << endl;
+		cout << "***** 1. sin(x)               2. cos(x)          *****" << endl;
+		cout << "*****                3. tan(x)                   *****" << endl;
+		cout << "******************************************************" << endl;
+		int choice;
+		cin >> choice;
+		switch (choice)
+		{
+		case 1:
+		{//1. sin(x)
+			cout << "请输入x：";
+			double x;
+			cin >> x;
+			double result;
+			result = sin(x);
+			cout << "计算结果是：" << result << endl;
+		}
+
+		case 2:
+		{// 2. cos(x)
+			cout << "请输入x：";
+			double x;
+			cin >> x;
+			double result;
+			result = cos(x);
+			cout << "计算结果是：" << result << endl;
+		}
+
+		case 3:
+		{// 3. tan(x)
+			cout << "请输入x：";
+			double x;
+			cin >> x;
+			double result;
+			result = tan(x);
+			cout << "计算结果是：" << result << endl;
+		}
+
+		default:
+			break;
+		}
+	}
+
+	default:
+		break;
+	}
 }
