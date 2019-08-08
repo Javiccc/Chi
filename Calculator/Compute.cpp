@@ -6,13 +6,15 @@
 #include<fstream>
 #include<iomanip>
 #include<Windows.h>
+#include"Polynomial.h"
 
 void printRequest();	//输出需求选择
 void matrixCompute();	//封装矩阵计算的函数
 void hugeIntCompute();	//封装大数运算的函数
 void complexCompute();	//封装复数运算的函数	
 void pictureDraw();		//封装图像绘制的函数
-void gotoxy(int x, int y);		//绘制函数图像所需要的goto函数
+//void gotoxy(int x, int y);		//绘制函数图像所需要的goto函数
+void polynomialCompute();		//封装多项式计算的函数
 
 
 void Calculator::compute()
@@ -39,6 +41,10 @@ void Calculator::compute()
 			pictureDraw();
 			break;
 
+		case 5:
+			polynomialCompute();
+			break;
+
 		default:
 			break;
 		}
@@ -55,6 +61,7 @@ void printRequest()
 	cout << "***** Please choose which computation you want *****" << endl;
 	cout << "***** 1. MatrixCompute       2. HugeIntCompute *****" << endl;
 	cout << "***** 3. ComplexCompute      4. PictureDraw    *****" << endl;
+	cout << "*****           5. PolynomialCompute           *****" << endl;
 	cout << "****************************************************" << endl;
 }
 
@@ -576,4 +583,29 @@ void gotoxy(int x, int y)
 	HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
 	COORD c = { x, y };
 	SetConsoleCursorPosition(hOut, c);
+}
+
+void polynomialCompute()
+{
+	cout << "f(x) = a0 + a1*x + a2*x*x + a3*x*x*x " << endl;
+	cout << "请依次输入多项式的系数a0, a1, a2, a3: " << endl;
+	double pp0;
+	double pp1;
+	double pp2;
+	double pp3;
+	cin >> pp0;
+	cin >> pp1;
+	cin >> pp2;
+	cin >> pp3;
+	Polynomial polynomial = Polynomial(pp0, pp1, pp2, pp3);
+	cout << "多项式为：";
+	//cout << "f(x) = " << polynomial.getA0() << " + " << polynomial.getA1() << " * x + "
+	//	<< polynomial.getA2() << " * x*x + " << polynomial.getA3() << " * x*x*x ";
+	cout << polynomial;
+	double x;
+	cout << "请输入变量x的值：";
+	cin >> x;
+	cout << "多项式的计算结果为：";
+	polynomial.setX(x);
+	cout << polynomial.computeValue();
 }

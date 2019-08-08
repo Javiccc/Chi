@@ -1,8 +1,8 @@
 ﻿  Compute.cpp
-c:\users\lenovo\desktop\cpp实训\计算器\calculator\calculator\compute.cpp(442): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
-c:\users\lenovo\desktop\cpp实训\计算器\calculator\calculator\compute.cpp(466): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
-c:\users\lenovo\desktop\cpp实训\计算器\calculator\calculator\compute.cpp(502): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
-c:\users\lenovo\desktop\cpp实训\计算器\calculator\calculator\compute.cpp(523): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
-c:\users\lenovo\desktop\cpp实训\计算器\calculator\calculator\compute.cpp(556): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
-c:\users\lenovo\desktop\cpp实训\计算器\calculator\calculator\compute.cpp(577): warning C4838: 从“int”转换到“SHORT”需要收缩转换
+c:\users\lenovo\desktop\cpp实训\计算器\calculator\calculator\compute.cpp(449): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+c:\users\lenovo\desktop\cpp实训\计算器\calculator\calculator\compute.cpp(473): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+c:\users\lenovo\desktop\cpp实训\计算器\calculator\calculator\compute.cpp(509): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+c:\users\lenovo\desktop\cpp实训\计算器\calculator\calculator\compute.cpp(530): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+c:\users\lenovo\desktop\cpp实训\计算器\calculator\calculator\compute.cpp(563): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+c:\users\lenovo\desktop\cpp实训\计算器\calculator\calculator\compute.cpp(584): warning C4838: 从“int”转换到“SHORT”需要收缩转换
   Calculator.vcxproj -> C:\Users\lenovo\Desktop\CPP实训\计算器\Calculator\Debug\Calculator.exe

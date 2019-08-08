@@ -27,6 +27,9 @@
     <ClInclude Include="Complex.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Polynomial.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Matrix.cpp">
@@ -45,6 +48,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Complex.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Polynomial.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
