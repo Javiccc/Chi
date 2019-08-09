@@ -8,16 +8,7 @@
 #include<Windows.h>
 #include"Polynomial.h"
 
-void printRequest();	//输出需求选择
-void matrixCompute();	//封装矩阵计算的函数
-void hugeIntCompute();	//封装大数运算的函数
-void complexCompute();	//封装复数运算的函数	
-void pictureDraw();		//封装图像绘制的函数
 //void gotoxy(int x, int y);		//绘制函数图像所需要的goto函数
-void polynomialCompute();		//封装多项式计算的函数
-void simpleCompute();		//封装基本函数运算的函数
-void simpleFunction();		//封装初等函数运算的函数
-
 
 void Calculator::compute()
 {//用来封装计算的函数
@@ -715,6 +706,7 @@ void simpleFunction()
 		result = pow(x, y);
 		cout << "计算结果是：" << result << endl;
 	}
+	break;
 
 	case 2:
 	{//2. 对数函数log(x) y
@@ -729,14 +721,10 @@ void simpleFunction()
 		result = log(y) / log(x);
 		cout << "计算结果是：" << result << endl;
 	}
+	break;
 
 	case 3:
 	{//3. 三角函数  
-
-	}
-
-	case 4:
-	{
 		cout << "******************************************************" << endl;
 		cout << "****** Please choose which computation you want ******" << endl;
 		cout << "***** 1. sin(x)               2. cos(x)          *****" << endl;
@@ -755,6 +743,7 @@ void simpleFunction()
 			result = sin(x);
 			cout << "计算结果是：" << result << endl;
 		}
+		break;
 
 		case 2:
 		{// 2. cos(x)
@@ -765,6 +754,7 @@ void simpleFunction()
 			result = cos(x);
 			cout << "计算结果是：" << result << endl;
 		}
+		break;
 
 		case 3:
 		{// 3. tan(x)
@@ -775,11 +765,13 @@ void simpleFunction()
 			result = tan(x);
 			cout << "计算结果是：" << result << endl;
 		}
+		break;
 
 		default:
 			break;
 		}
 	}
+	break;
 
 	default:
 		break;
