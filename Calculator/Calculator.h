@@ -27,3 +27,4 @@ void pictureDraw();		//封装图像绘制的函数
 void polynomialCompute();		//封装多项式计算的函数
 void simpleCompute();		//封装基本函数运算的函数
 void simpleFunction();		//封装初等函数运算的函数
+void beautifulCompute();	//调用精美可视化界面

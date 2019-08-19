@@ -7,6 +7,7 @@
 #include<iomanip>
 #include<Windows.h>
 #include"Polynomial.h"
+#include<process.h>
 
 //void gotoxy(int x, int y);		//绘制函数图像所需要的goto函数
 
@@ -46,6 +47,10 @@ void Calculator::compute()
 			simpleFunction();
 			break;
 
+		case 8:
+			beautifulCompute();
+			break;
+
 		default:
 			break;
 		}
@@ -63,7 +68,7 @@ void printRequest()
 	cout << "***** 1. MatrixCompute       2. HugeIntCompute *****" << endl;
 	cout << "***** 3. ComplexCompute      4. PictureDraw    *****" << endl;
 	cout << "***** 5. PolynomialCompute   6. SimpleCompute  *****" << endl;
-	cout << "*****              7. SimpleFunction           *****" << endl;
+	cout << "***** 7. SimpleFunction      8. BeautifulCal   *****" << endl;
 	cout << "****************************************************" << endl;
 }
 
@@ -776,4 +781,9 @@ void simpleFunction()
 	default:
 		break;
 	}
+}
+
+void beautifulCompute()
+{
+	system("C:\\Users\\lenovo\\Desktop\\CPP实训\\SimpleCalculator\\SimpleCalculator.exe");
 }
